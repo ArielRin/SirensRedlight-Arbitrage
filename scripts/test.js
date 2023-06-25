@@ -4,6 +4,7 @@ require("dotenv").config();
 
 let config,arb,owner;
 const network = hre.network.name;
+if (network === 'redlight') config = require('./../config/redlight.json');
 if (network === 'aurora') config = require('./../config/aurora.json');
 if (network === 'fantom') config = require('./../config/fantom.json');
 
@@ -14,7 +15,7 @@ const main = async () => {
   arb = await IArb.attach(config.arbContract);
 	const res = await arb.stables(0);
 	console.log(res);
-	
+
 }
 
 process.on('uncaughtException', function(err) {

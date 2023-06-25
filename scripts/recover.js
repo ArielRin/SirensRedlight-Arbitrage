@@ -4,6 +4,7 @@ require("dotenv").config();
 
 let config,arb,owner;
 const network = hre.network.name;
+if (network === 'redlight') config = require('./../config/redlight.json');
 if (network === 'aurora') config = require('./../config/aurora.json');
 if (network === 'fantom') config = require('./../config/fantom.json');
 

@@ -4,6 +4,7 @@ require("dotenv").config();
 
 let config,arb,owner;
 const network = hre.network.name;
+if (network === 'redlight') config = require('./../config/redlight.json');
 if (network === 'aurora') config = require('./../config/aurora.json');
 if (network === 'fantom') config = require('./../config/fantom.json');
 
@@ -14,7 +15,7 @@ const main = async () => {
 	console.log(`Gas Price: ${gasPrice.toString()}`);
 	const recommendedPrice = gasPrice.mul(10).div(9);
 	console.log(`Recommended Price: ${recommendedPrice.toString()}`);
-	
+
 }
 
 process.on('uncaughtException', function(err) {

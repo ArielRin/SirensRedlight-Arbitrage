@@ -14,10 +14,15 @@ module.exports = {
       url: `https://rpc.ftm.tools/`,
       accounts: [process.env.privateKey],
     },
+    redlight: {
+      url: `https://dataseed2.redlightscan.finance`,
+      accounts: [process.env.privateKey],
+    },
   },
   solidity: {
     compilers: [
       { version: "0.8.7" },
+      { version: "0.8.4" },
       { version: "0.7.6" },
       { version: "0.6.6" }
     ]

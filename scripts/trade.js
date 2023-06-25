@@ -4,6 +4,7 @@ require("dotenv").config();
 
 let config,arb,owner,inTrade,balances;
 const network = hre.network.name;
+if (network === 'redlight') config = require('./../config/redlight.json');
 if (network === 'aurora') config = require('./../config/aurora.json');
 if (network === 'fantom') config = require('./../config/fantom.json');
 
@@ -65,13 +66,13 @@ const lookForDualTrade = async () => {
     }
   } catch (e) {
     console.log(e);
-    await lookForDualTrade();	
+    await lookForDualTrade();
   }
 }
 
 const dualTrade = async (router1,router2,baseToken,token2,amount) => {
   if (inTrade === true) {
-    await lookForDualTrade();	
+    await lookForDualTrade();
     return false;
   }
   try {
