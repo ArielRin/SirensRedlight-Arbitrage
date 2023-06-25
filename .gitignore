@@ -87,3 +87,4 @@ typechain
 cache
 artifacts
 data/balances.txt
+.env-example.txt
