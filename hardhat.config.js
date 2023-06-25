@@ -7,7 +7,7 @@ require("dotenv").config();
 module.exports = {
   networks: {
     aurora: {
-      url: `https://mainnet.aurora.dev`,
+      url: `https://mainnet.aurora.dev/`,
       accounts: [process.env.privateKey],
     },
     fantom: {
@@ -15,14 +15,13 @@ module.exports = {
       accounts: [process.env.privateKey],
     },
     redlight: {
-      url: `https://dataseed2.redlightscan.finance`,
+      url: `https://dataseed2.redlightscan.finance/`,
       accounts: [process.env.privateKey],
     },
   },
   solidity: {
     compilers: [
       { version: "0.8.7" },
-      { version: "0.8.4" },
       { version: "0.7.6" },
       { version: "0.6.6" }
     ]
